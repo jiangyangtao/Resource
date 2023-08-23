@@ -13,7 +13,7 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.5" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
 		<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
-		<PackageReference Include="Yangtao.Hosting.Extensions" Version="1.0.0-alpha2.2" />
+		<PackageReference Include="Yangtao.Hosting.Extensions" Version="1.0.0-alpha2.3" />
 	</ItemGroup>
 
 	<ItemGroup>
