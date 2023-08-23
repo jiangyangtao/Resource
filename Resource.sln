@@ -7,15 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D77C9A4D-8E9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EE22617D-7764-4D10-B1C2-CFAF6C04A065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Application", "src\Resource.Application\Resource.Application.csproj", "{C6E3CF8A-3A44-490C-9B1D-8999F684ED26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resource.Application", "src\Resource.Application\Resource.Application.csproj", "{C6E3CF8A-3A44-490C-9B1D-8999F684ED26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Repository", "src\Resource.Repository\Resource.Repository.csproj", "{EC521757-A9EB-4CF4-BFF6-88846F877155}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resource.Repository", "src\Resource.Repository\Resource.Repository.csproj", "{EC521757-A9EB-4CF4-BFF6-88846F877155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Core", "src\Resource.Core\Resource.Core.csproj", "{A2752CF8-0037-4562-A20E-0B4B049FD4D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resource.Core", "src\Resource.Core\Resource.Core.csproj", "{A2752CF8-0037-4562-A20E-0B4B049FD4D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Repository.Abstractions", "src\Resource.Repository.Abstractions\Resource.Repository.Abstractions.csproj", "{BC95E869-C796-43E9-A130-54D5E7A229A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resource.Repository.Abstractions", "src\Resource.Repository.Abstractions\Resource.Repository.Abstractions.csproj", "{BC95E869-C796-43E9-A130-54D5E7A229A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Repository.Models", "Resource.Repository.Models\Resource.Repository.Models.csproj", "{9632477C-44AF-4B23-93B1-49378E81AB5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resource.Repository.Models", "Resource.Repository.Models\Resource.Repository.Models.csproj", "{9632477C-44AF-4B23-93B1-49378E81AB5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Abstractions", "src\Resource.Abstractions\Resource.Abstractions.csproj", "{00DA0AD0-F4EF-4412-8E3E-BD7A59D4428C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{9632477C-44AF-4B23-93B1-49378E81AB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9632477C-44AF-4B23-93B1-49378E81AB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9632477C-44AF-4B23-93B1-49378E81AB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00DA0AD0-F4EF-4412-8E3E-BD7A59D4428C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DA0AD0-F4EF-4412-8E3E-BD7A59D4428C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DA0AD0-F4EF-4412-8E3E-BD7A59D4428C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DA0AD0-F4EF-4412-8E3E-BD7A59D4428C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{A2752CF8-0037-4562-A20E-0B4B049FD4D5} = {D77C9A4D-8E95-4EF9-B8D2-F23237CE8C33}
 		{BC95E869-C796-43E9-A130-54D5E7A229A1} = {D77C9A4D-8E95-4EF9-B8D2-F23237CE8C33}
 		{9632477C-44AF-4B23-93B1-49378E81AB5A} = {D77C9A4D-8E95-4EF9-B8D2-F23237CE8C33}
+		{00DA0AD0-F4EF-4412-8E3E-BD7A59D4428C} = {D77C9A4D-8E95-4EF9-B8D2-F23237CE8C33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D411A0CF-5124-450B-8C42-52004BDE4E48}

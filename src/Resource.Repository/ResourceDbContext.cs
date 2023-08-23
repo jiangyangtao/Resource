@@ -32,7 +32,7 @@ namespace Resource.Repository
         public static Type[] GetEntityTypes()
         {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            var modelType = typeof(IEntity);
+            var modelType = typeof(BaseEntity);
             var entityTypes = assemblies.SelectMany(assemblie => assemblie.GetTypes().Where(t => t.BaseType != null && t.BaseType == modelType)).ToArray();
             return entityTypes.Where(a => a.HasInterface<IProxyTargetAccessor>() == false).ToArray();  // 去除懒加载创建的实体代理
         }
