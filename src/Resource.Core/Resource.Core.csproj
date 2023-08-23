@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Yangtao.Hosting.Core" Version="1.0.0-alpha2.1" />
+	</ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\Resource.Repository.Models\Resource.Repository.Models.csproj" />
     <ProjectReference Include="..\Resource.Abstractions\Resource.Abstractions.csproj" />

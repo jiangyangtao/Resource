@@ -1,6 +1,6 @@
 ﻿namespace Resource.Application.Controllers
 {
-    public class SystemController
+    public class SystemController : BaseController
     {
     }
 }

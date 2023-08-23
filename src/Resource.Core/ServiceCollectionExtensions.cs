@@ -9,7 +9,7 @@ namespace Resource.Core
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddTobaccoCore(this IServiceCollection services, Action<ResourceOptions> action)
+        public static IServiceCollection AddResourceCore(this IServiceCollection services, Action<ResourceOptions> action)
         {
             var options = new ResourceOptions();
             action(options);
