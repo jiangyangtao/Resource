@@ -5,13 +5,16 @@ namespace Resource.Application
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var services = builder.Services;
+            var configuration = builder.Configuration;
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
 
             var app = builder.Build();
 
@@ -28,6 +31,8 @@ namespace Resource.Application
 
 
             app.MapControllers();
+
+            app.Map("/", () => "Hello Resource Service"); // ื๎ะก API
 
             app.Run();
         }

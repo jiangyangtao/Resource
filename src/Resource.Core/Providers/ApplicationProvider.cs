@@ -1,9 +1,10 @@
-﻿using Resource.Repository.Abstractions;
+﻿using Resource.Abstractions.IProviders;
+using Resource.Repository.Abstractions;
 using Resource.Repository.Models;
 
 namespace Resource.Core.Providers
 {
-    internal class ApplicationProvider
+    internal class ApplicationProvider: IApplicationProvider
     {
         private readonly IRepository<Application> _applicationRepository;
 

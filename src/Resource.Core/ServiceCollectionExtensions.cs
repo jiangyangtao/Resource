@@ -1,0 +1,30 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Resource.Abstractions.IProviders;
+using Resource.Abstractions.IServices;
+using Resource.Core.Providers;
+using Resource.Core.Services;
+using Resource.Repository;
+
+namespace Resource.Core
+{
+    public static class ServiceCollectionExtensions
+    {
+        public static IServiceCollection AddTobaccoCore(this IServiceCollection services, Action<ResourceOptions> action)
+        {
+            var options = new ResourceOptions();
+            action(options);
+
+            services.AddRepository(options.ConnectionString);
+
+            services.AddScoped<IServerProvider, ServerProvider>();
+            services.AddScoped<ISystemProvider, SystemProvider>();
+            services.AddScoped<IApplicationProvider, ApplicationProvider>();
+
+            services.AddScoped<IServerService, ServerService>();
+            services.AddScoped<ISystemService, SystemService>();
+            services.AddScoped<IApplicationService, ApplicationService>();
+
+            return services;
+        }
+    }
+}

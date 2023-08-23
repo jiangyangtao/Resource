@@ -1,8 +1,9 @@
-﻿using Resource.Repository.Abstractions;
+﻿using Resource.Abstractions.IProviders;
+using Resource.Repository.Abstractions;
 
 namespace Resource.Core.Providers
 {
-    internal class SystemProvider
+    internal class SystemProvider: ISystemProvider
     {
         private readonly IRepository<Repository.Models.System> _systemRepository;
 

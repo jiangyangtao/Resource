@@ -1,7 +1,7 @@
 ﻿
 namespace Resource.Abstractions.IServices
 {
-    internal interface ISystemService
+    public interface ISystemService
     {
 
     }
