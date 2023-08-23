@@ -1,5 +1,5 @@
 ﻿
-namespace Resource.Abstractions.IService
+namespace Resource.Abstractions.IServices
 {
     internal interface ISystemService
     {

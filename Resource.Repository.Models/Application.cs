@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Resource.Repository.Abstractions;
 
 namespace Resource.Repository.Models
 {
-    public class Application
+    public class Application : BaseEntity
     {
     }
 }
