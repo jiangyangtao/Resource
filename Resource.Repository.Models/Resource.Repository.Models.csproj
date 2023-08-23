@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\src\Resource.Enums\Resource.Enums.csproj" />
     <ProjectReference Include="..\src\Resource.Repository.Abstractions\Resource.Repository.Abstractions.csproj" />
   </ItemGroup>
 

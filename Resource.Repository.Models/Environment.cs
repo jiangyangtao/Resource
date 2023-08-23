@@ -1,4 +1,5 @@
-﻿using Resource.Repository.Abstractions;
+﻿using Resource.Enums;
+using Resource.Repository.Abstractions;
 
 namespace Resource.Repository.Models
 {
