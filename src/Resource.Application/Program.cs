@@ -1,9 +1,9 @@
 using IdentityAuthentication.Model.Handlers;
 using IdentityAuthentication.TokenValidation;
 using Microsoft.IdentityModel.Tokens;
-using NLog.Web;
 using Resource.Core;
 using Yangtao.Hosting.Mvc;
+using Yangtao.Hosting.NLog;
 
 namespace Resource.Application
 {
@@ -14,8 +14,7 @@ namespace Resource.Application
             var builder = WebApplication.CreateBuilder(args);
 
             // Add NLog
-            builder.Logging.ClearProviders();
-            builder.Host.UseNLog();
+            builder.Logging.ConfigNLog();
 
             var services = builder.Services;
             var configuration = builder.Configuration;
@@ -67,7 +66,7 @@ namespace Resource.Application
                 app.UseSwaggerUI();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
