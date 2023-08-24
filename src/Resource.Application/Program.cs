@@ -1,8 +1,6 @@
 using IdentityAuthentication.Model.Handlers;
 using IdentityAuthentication.TokenValidation;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using NLog.Web;
 using Resource.Core;
 using Yangtao.Hosting.Mvc;
@@ -24,23 +22,11 @@ namespace Resource.Application
 
             // Add services to the container.
 
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(policy =>
-                {
-                    policy.SetIsOriginAllowed(_ => true).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
-                });
-            });
+            services.AddAllowAnyCors();
             services.AddControllers(options =>
             {
                 options.Filters.AddGlobalExceptionFilter();
-            }).AddModelValidation().AddNewtonsoftJson(options =>
-            {
-                options.SerializerSettings.Formatting = Formatting.Indented;
-                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            });
+            }).AddModelValidation().AddDefaultNewtonsoftJson();
 
             services.AddAuthentication(options =>
             {
