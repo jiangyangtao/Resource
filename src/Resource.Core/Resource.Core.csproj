@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Yangtao.Hosting.Core" Version="1.0.0-alpha2.6" />
-		<PackageReference Include="Yangtao.Hosting.Repository.MySql" Version="1.0.0-alpha2.7" />
+		<PackageReference Include="Yangtao.Hosting.Repository.MySql" Version="1.0.0-alpha2.8" />
 	</ItemGroup>
 
   <ItemGroup>
