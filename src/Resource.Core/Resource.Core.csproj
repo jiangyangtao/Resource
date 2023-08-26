@@ -7,13 +7,13 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Yangtao.Hosting.Core" Version="1.0.0-alpha2.3" />
+		<PackageReference Include="Yangtao.Hosting.Core" Version="1.0.0-alpha2.6" />
+		<PackageReference Include="Yangtao.Hosting.Repository.MySql" Version="1.0.0-alpha2.7" />
 	</ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Resource.Repository.Models\Resource.Repository.Models.csproj" />
     <ProjectReference Include="..\Resource.Abstractions\Resource.Abstractions.csproj" />
-    <ProjectReference Include="..\Resource.Repository\Resource.Repository.csproj" />
+    <ProjectReference Include="..\Resource.Model\Resource.Model.csproj" />
   </ItemGroup>
 
 </Project>

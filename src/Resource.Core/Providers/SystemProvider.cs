@@ -1,13 +1,13 @@
 ﻿using Resource.Abstractions.IProviders;
-using Resource.Repository.Abstractions;
+using Yangtao.Hosting.Repository.Abstractions;
 
 namespace Resource.Core.Providers
 {
-    internal class SystemProvider: ISystemProvider
+    internal class SystemProvider : ISystemProvider
     {
-        private readonly IRepository<Repository.Models.System> _systemRepository;
+        private readonly IEntityRepositoryProvider<Models.System> _systemRepository;
 
-        public SystemProvider(IRepository<Repository.Models.System> systemRepository)
+        public SystemProvider(IEntityRepositoryProvider<Models.System> systemRepository)
         {
             _systemRepository = systemRepository;
         }

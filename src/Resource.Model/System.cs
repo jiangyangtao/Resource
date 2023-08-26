@@ -1,6 +1,6 @@
-﻿using Resource.Repository.Abstractions;
+﻿using Yangtao.Hosting.Repository.Abstractions;
 
-namespace Resource.Repository.Models
+namespace Resource.Models
 {
     public class System : BaseEntity
     {

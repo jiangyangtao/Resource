@@ -1,14 +1,14 @@
 ﻿using Resource.Abstractions.IProviders;
-using Resource.Repository.Abstractions;
-using Resource.Repository.Models;
+using Resource.Models;
+using Yangtao.Hosting.Repository.Abstractions;
 
 namespace Resource.Core.Providers
 {
     internal class ApplicationProvider: IApplicationProvider
     {
-        private readonly IRepository<Application> _applicationRepository;
+        private readonly IEntityRepositoryProvider<Application> _applicationRepository;
 
-        public ApplicationProvider(IRepository<Application> applicationRepository)
+        public ApplicationProvider(IEntityRepositoryProvider<Application> applicationRepository)
         {
             _applicationRepository = applicationRepository;
         }

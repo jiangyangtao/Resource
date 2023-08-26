@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Resource.Enums\Resource.Enums.csproj" />
-    <ProjectReference Include="..\src\Resource.Repository.Abstractions\Resource.Repository.Abstractions.csproj" />
+    <PackageReference Include="Yangtao.Hosting.Repository.Abstractions" Version="1.0.0-alpha2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Resource.Enums\Resource.Enums.csproj" />
   </ItemGroup>
 
 </Project>

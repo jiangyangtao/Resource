@@ -3,7 +3,7 @@ using Resource.Abstractions.IProviders;
 using Resource.Abstractions.IServices;
 using Resource.Core.Providers;
 using Resource.Core.Services;
-using Resource.Repository;
+using Yangtao.Hosting.Repository.MySql;
 
 namespace Resource.Core
 {

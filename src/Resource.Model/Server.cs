@@ -1,7 +1,7 @@
-﻿using Resource.Repository.Abstractions;
+﻿using Yangtao.Hosting.Repository.Abstractions;
 using System.ComponentModel.DataAnnotations;
 
-namespace Resource.Repository.Models
+namespace Resource.Models
 {
     public class Server : BaseEntity
     {

@@ -76,6 +76,9 @@ namespace Resource.Application
             app.MapControllers();
 
             app.Map("/", () => "Hello Resource Service"); // ื๎ะก API
+            app.MapGet("/", (HttpContext context) => { 
+                context.Response.ContentType
+            });
 
             app.Run();
         }
