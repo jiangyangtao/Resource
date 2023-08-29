@@ -2,6 +2,7 @@ using IdentityAuthentication.Model.Handlers;
 using IdentityAuthentication.TokenValidation;
 using Microsoft.IdentityModel.Tokens;
 using Resource.Core;
+using Yangtao.Hosting.Endpoint;
 using Yangtao.Hosting.Mvc;
 using Yangtao.Hosting.NLog;
 
@@ -51,6 +52,7 @@ namespace Resource.Application
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
+            services.AddApiVersion();
             services.AddSwaggerGen();
             services.AddResourceCore(options =>
             {
@@ -75,11 +77,8 @@ namespace Resource.Application
 
             app.MapControllers();
 
+            app.UseEnumConfigurationEndpoint();
             app.Map("/", () => "Hello Resource Service"); // ื๎ะก API
-            app.MapGet("/", (HttpContext context) => { 
-                context.Response.ContentType
-            });
-
             app.Run();
         }
     }
