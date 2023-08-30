@@ -28,36 +28,16 @@ namespace Resource.Application
                 options.Filters.AddGlobalExceptionFilter();
             }).AddModelValidation().AddDefaultNewtonsoftJson();
 
-            services.AddAuthentication(options =>
-            {
-                var authenticationConfig = configuration.GetSection("Authentication");
-                options.Authority = authenticationConfig.GetValue<string>("Endpoint");
-                options.Events = new IdentityAuthenticationEvents
-                {
-                    OnMessageReceived = context =>
-                    {
-                        context.Token = context.Request.Query["access_token"];
-                        return Task.CompletedTask;
-                    },
-                    OnAuthenticationFailed = context =>
-                    {
-                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
-                        {
-                            context.Response.Headers.Add("Token-Expired", "true");
-                        }
-                        return Task.CompletedTask;
-                    },
-                };
-            });
+            services.AddIdentityAuthentication();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
             services.AddApiVersion();
             services.AddSwaggerGen();
-            services.AddResourceCore(options =>
-            {
-                options.ConnectionString = string.Empty;
-            });
+            //services.AddResourceCore(options =>
+            //{
+            //    options.ConnectionString = string.Empty;
+            //});
 
             var app = builder.Build();
 
@@ -68,7 +48,7 @@ namespace Resource.Application
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
