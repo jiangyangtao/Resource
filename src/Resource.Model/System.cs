@@ -7,9 +7,14 @@ namespace Resource.Models
         /// <summary>
         /// 系统代码
         /// </summary>
-        public string SystemCode { set; get; }
+        public string? SystemCode { set; get; }
 
-        public string SystemName { set; get; }
+        public string? SystemName { set; get; }
+
+        /// <summary>
+        /// 首页
+        /// </summary>
+        public string HomePage { set; get; }
 
         /// <summary>
         /// 描述

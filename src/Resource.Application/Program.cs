@@ -2,6 +2,7 @@ using IdentityAuthentication.TokenValidation;
 using Yangtao.Hosting.Endpoint;
 using Yangtao.Hosting.Mvc;
 using Yangtao.Hosting.NLog;
+using Resource.Core;
 
 namespace Resource.Application
 {
@@ -31,10 +32,7 @@ namespace Resource.Application
             services.AddEndpointsApiExplorer();
             services.AddApiVersion();
             services.AddSwaggerGen();
-            //services.AddResourceCore(options =>
-            //{
-            //    options.ConnectionString = string.Empty;
-            //});
+            services.AddResourceCore();
 
             var app = builder.Build();
 

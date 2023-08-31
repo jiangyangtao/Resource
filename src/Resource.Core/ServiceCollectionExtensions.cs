@@ -9,12 +9,9 @@ namespace Resource.Core
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddResourceCore(this IServiceCollection services, Action<ResourceOptions> action)
+        public static IServiceCollection AddResourceCore(this IServiceCollection services)
         {
-            var options = new ResourceOptions();
-            action(options);
-
-            services.AddRepository(options.ConnectionString);
+            services.AddRepository();
 
             services.AddScoped<IServerProvider, ServerProvider>();
             services.AddScoped<ISystemProvider, SystemProvider>();
