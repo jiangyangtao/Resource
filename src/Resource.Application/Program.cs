@@ -1,7 +1,4 @@
-using IdentityAuthentication.Model.Handlers;
 using IdentityAuthentication.TokenValidation;
-using Microsoft.IdentityModel.Tokens;
-using Resource.Core;
 using Yangtao.Hosting.Endpoint;
 using Yangtao.Hosting.Mvc;
 using Yangtao.Hosting.NLog;
