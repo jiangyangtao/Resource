@@ -1,6 +1,8 @@
-﻿namespace Resource.Application.Controllers
+﻿using Yangtao.Hosting.Controller;
+
+namespace Resource.Application.Controllers
 {
-    public class ServerController: BaseController
+    public class ServerController: BaseApiController
     {
     }
 }
