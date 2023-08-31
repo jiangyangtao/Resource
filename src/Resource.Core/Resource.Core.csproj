@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Resource.Abstractions\Resource.Abstractions.csproj" />
-    <ProjectReference Include="..\Resource.Model\Resource.Model.csproj" />
   </ItemGroup>
 
 </Project>
