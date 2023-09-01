@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Resource.Core.Providers
+namespace Resource.Core.Abstracts.IProviders
 {
     public interface IDeployeProvider
     {

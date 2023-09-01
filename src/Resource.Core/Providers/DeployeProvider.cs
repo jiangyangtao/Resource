@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Resource.Abstractions.IProviders;
+using Resource.Core.Abstracts.IProviders;
 using Resource.Model;
 using Yangtao.Hosting.Core.HttpErrorResult;
 using Yangtao.Hosting.Repository.Abstractions;
