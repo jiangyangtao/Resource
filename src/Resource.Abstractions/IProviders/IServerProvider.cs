@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Resource.Model;
 
 namespace Resource.Abstractions.IProviders
 {
     public interface IServerProvider
     {
+        Task<bool> ExistAsync(string instanceId);
+
+        Task<Server[]> GetServersAsync(ServerQueryParams queryParams);
+
+        Task<long> GetServerCountAsync(ServerQueryParams queryParams);
+
+        Task<Server?> GetServerAsync(string instanceId);
     }
 }
