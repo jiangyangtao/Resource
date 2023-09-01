@@ -1,4 +1,5 @@
 ﻿using Resource.Model.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 using Yangtao.Hosting.Repository.Abstractions;
 
 namespace Resource.Model
@@ -9,6 +10,9 @@ namespace Resource.Model
         /// 系统代码
         /// </summary>
         public string SystemCode { set; get; }
+
+        [NotMapped]
+        public System System { set; get; }
 
         /// <summary>
         /// 应用标识
