@@ -19,14 +19,14 @@ namespace Resource.Core.Providers
         {
             if (instanceId.IsNullOrEmpty()) return false;
 
-            return await _serverRepository.Get(a => a.ServerInstanceId == instanceId).AnyAsync();
+            return await _serverRepository.Get(a => a.InstanceId == instanceId).AnyAsync();
         }
 
         public async Task<Server?> GetServerAsync(string instanceId)
         {
             if (instanceId.IsNullOrEmpty()) return null;
 
-            return await _serverRepository.Get(a => a.ServerInstanceId == instanceId).FirstOrDefaultAsync();
+            return await _serverRepository.Get(a => a.InstanceId == instanceId).FirstOrDefaultAsync();
         }
 
         public Task<long> GetServerCountAsync(ServerQueryParams queryParams)

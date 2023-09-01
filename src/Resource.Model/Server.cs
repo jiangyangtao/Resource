@@ -14,7 +14,7 @@ namespace Resource.Model
         /// 实例标识
         /// </summary>
         [Key]
-        public string ServerInstanceId { set; get; }
+        public string InstanceId { set; get; }
 
         /// <summary>
         /// 环境代码
@@ -93,7 +93,7 @@ namespace Resource.Model
         /// <summary>
         /// 实例标识
         /// </summary>
-        public string ServerInstanceId { set; get; }
+        public string InstanceId { set; get; }
 
         /// <summary>
         /// 环境代码
@@ -153,7 +153,7 @@ namespace Resource.Model
         public IQueryable<Server> GetQueryable(IEntityRepositoryProvider<Server> repositoryProvider)
         {
             var query = repositoryProvider.Get();
-            if (ServerInstanceId.NotNullAndEmpty()) query = query.Where(a => a.ServerInstanceId == ServerInstanceId);
+            if (InstanceId.NotNullAndEmpty()) query = query.Where(a => a.InstanceId == InstanceId);
             if (EnvironmentCode.NotNullAndEmpty()) query = query.Where(a => a.EnvironmentCode == EnvironmentCode);
             if (PublicIPAddress.NotNullAndEmpty()) query = query.Where(a => EF.Functions.Like(a.PublicIPAddress, $"{PublicIPAddress}"));
             if (IntranetIPAddress.NotNullAndEmpty()) query = query.Where(a => EF.Functions.Like(a.IntranetIPAddress, $"{IntranetIPAddress}"));
