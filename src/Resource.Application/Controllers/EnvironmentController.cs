@@ -2,8 +2,7 @@
 
 namespace Resource.Application.Controllers
 {
-    public class DeployeController : BaseApiController
+    public class EnvironmentController : BaseApiController
     {
-     
     }
 }
