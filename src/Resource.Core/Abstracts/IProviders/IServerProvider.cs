@@ -6,6 +6,8 @@ namespace Resource.Core.Abstracts.IProviders
     {
         Task<bool> ExistAsync(string instanceId);
 
+        Task<bool> ExistServerAsync(string environmentCode);
+
         Task<Server[]> GetServersAsync(ServerQueryParams queryParams);
 
         Task<long> GetServerCountAsync(ServerQueryParams queryParams);

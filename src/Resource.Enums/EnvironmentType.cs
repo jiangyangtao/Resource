@@ -22,4 +22,11 @@ namespace Resource.Enums
         [Display(Name = "生产")]
         Production
     }
+
+    public enum EnvironmentStatus
+    {
+        Useing,
+
+        Discarded,
+    }
 }

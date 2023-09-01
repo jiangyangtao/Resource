@@ -22,6 +22,13 @@ namespace Resource.Core.Providers
             return await _serverRepository.Get(a => a.InstanceId == instanceId).AnyAsync();
         }
 
+        public async Task<bool> ExistServerAsync(string environmentCode)
+        {
+            if (environmentCode.IsNullOrEmpty()) return false;
+
+            return await _serverRepository.Get(a => a.EnvironmentCode == environmentCode).AnyAsync();
+        }
+
         public async Task<Server?> GetServerAsync(string instanceId)
         {
             if (instanceId.IsNullOrEmpty()) return null;

@@ -18,11 +18,6 @@
 	<PackageReference Include="IdentityAuthentication.TokenValidation" Version="1.0.11" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Dto\" />
-  </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Resource.Core\Resource.Core.csproj" />
   </ItemGroup>
