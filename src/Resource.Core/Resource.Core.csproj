@@ -11,8 +11,8 @@
 		<PackageReference Include="Yangtao.Hosting.Repository.MySql" Version="1.0.0-alpha2.9.4" />
 	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Resource.Abstractions\Resource.Abstractions.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Resource.Model\Resource.Model.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Resource.Abstractions.IProviders;
+using Resource.Core.Abstracts.IProviders;
 using Yangtao.Hosting.Extensions;
 using Yangtao.Hosting.Repository.Abstractions;
 

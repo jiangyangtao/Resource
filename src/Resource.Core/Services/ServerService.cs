@@ -1,5 +1,5 @@
-﻿using Resource.Abstractions.IProviders;
-using Resource.Abstractions.IServices;
+﻿using Resource.Core.Abstracts.IProviders;
+using Resource.Core.Abstracts.IServices;
 using Resource.Model;
 using Yangtao.Hosting.Core.HttpErrorResult;
 using Yangtao.Hosting.Repository.Abstractions;

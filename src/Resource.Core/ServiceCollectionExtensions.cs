@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Resource.Abstractions.IProviders;
-using Resource.Abstractions.IServices;
+using Resource.Core.Abstracts.IProviders;
+using Resource.Core.Abstracts.IServices;
 using Resource.Core.Providers;
 using Resource.Core.Services;
 using Yangtao.Hosting.Repository.MySql;
