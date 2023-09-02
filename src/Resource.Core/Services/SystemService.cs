@@ -36,9 +36,9 @@ namespace Resource.Core.Services
             await _systemRepository.DeleteIfExistAsync(a => a.SystemCode == systemCode);
         }
 
-        public async Task UpdateAsymc(Model.System system)
+        public Task UpdateAsymc(Model.System system)
         {
-            await _systemRepository.UpdateIfExistAsync(a => a.SystemCode == system.SystemCode, a =>
+            return _systemRepository.UpdateIfExistAsync(a => a.SystemCode == system.SystemCode, a =>
             {
                 a.SystemName = system.SystemName;
                 a.HomePage = system.HomePage;

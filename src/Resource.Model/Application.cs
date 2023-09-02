@@ -1,5 +1,7 @@
-﻿using Resource.Model.Base;
+﻿using Microsoft.EntityFrameworkCore;
+using Resource.Model.Base;
 using System.ComponentModel.DataAnnotations.Schema;
+using Yangtao.Hosting.Extensions;
 using Yangtao.Hosting.Repository.Abstractions;
 
 namespace Resource.Model
@@ -46,5 +48,15 @@ namespace Resource.Model
         /// 应用名称
         /// </summary>
         public string ApplicationName { set; get; }
+
+        public IQueryable<Application> GetApplicationQueryable(IEntityRepositoryProvider<Application> repositoryProvider)
+        {
+            var query = repositoryProvider.Get();
+            if (SystemCode.NotNullAndEmpty()) query = query.Where(a => a.SystemCode == SystemCode);
+            if (ApplicationCode.NotNullAndEmpty()) query = query.Where(a => EF.Functions.Like(a.ApplicationCode, $"%{ApplicationCode}%"));
+            if (SystemCode.NotNullAndEmpty()) query = query.Where(a => EF.Functions.Like(a.ApplicationName, $"%{ApplicationName}%"));
+
+            return query;
+        }
     }
 }

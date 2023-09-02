@@ -28,15 +28,12 @@ namespace Resource.Core.Services
             await _environmentRepository.AddAsync(environment);
         }
 
-        public async Task RemoveAsync(string environmentCode)
-        {
-            await _environmentRepository.DeleteIfExistAsync(a => a.EnvironmentCode == environmentCode);
-        }
+        public Task RemoveAsync(string environmentCode) => _environmentRepository.DeleteIfExistAsync(a => a.EnvironmentCode == environmentCode);
 
-        public async Task SetEnvironmentStatus(string environmentCode, EnvironmentStatus status)
-        {
-            await _environmentRepository.UpdateIfExistAsync(a => a.EnvironmentCode == environmentCode, a => a.EnvironmentStatus = status);
-        }
+
+        public Task SetEnvironmentStatus(string environmentCode, EnvironmentStatus status) =>
+            _environmentRepository.UpdateIfExistAsync(a => a.EnvironmentCode == environmentCode, a => a.EnvironmentStatus = status);
+
 
         public async Task UpdateAsync(Environment environment)
         {

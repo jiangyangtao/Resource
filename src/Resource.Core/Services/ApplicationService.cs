@@ -25,14 +25,11 @@ namespace Resource.Core.Services
             await _applicationRepository.AddAsync(application);
         }
 
-        public async Task RemoveAsync(string applicationCode)
-        {
-            await _applicationRepository.DeleteIfExistAsync(a => a.ApplicationCode == applicationCode);
-        }
+        public Task RemoveAsync(string applicationCode) => _applicationRepository.DeleteIfExistAsync(a => a.ApplicationCode == applicationCode);
 
-        public async Task UpdateAsync(Application application)
+        public Task UpdateAsync(Application application)
         {
-            await _applicationRepository.UpdateIfExistAsync(a => a.ApplicationCode == application.ApplicationCode, a =>
+            return _applicationRepository.UpdateIfExistAsync(a => a.ApplicationCode == application.ApplicationCode, a =>
             {
                 a.ApplicationName = application.ApplicationName;
                 a.Description = application.Description;
