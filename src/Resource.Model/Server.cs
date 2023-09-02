@@ -68,6 +68,11 @@ namespace Resource.Model
         public string LocatedArea { set; get; }
 
         /// <summary>
+        /// 到期时间
+        /// </summary>
+        public DateTime ExpirationTime { set; get; }
+
+        /// <summary>
         /// CPU
         /// </summary>
         public int CPU { set; get; }
@@ -80,7 +85,7 @@ namespace Resource.Model
         /// <summary>
         /// 硬盘容量
         /// </summary>
-        public int HardDiskCapacity { set; get; }
+        public int? HardDiskCapacity { set; get; }
 
         /// <summary>
         /// 描述

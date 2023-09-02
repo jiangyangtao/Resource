@@ -17,6 +17,25 @@ namespace Resource.Enums
         PhysicalServer
     }
 
+    /// <summary>
+    /// 服务器状态
+    /// </summary>
+    public enum ServerStatus
+    {
+        /// <summary>
+        /// 生效中
+        /// </summary>
+        Effective,
+
+        /// <summary>
+        /// 已过期
+        /// </summary>
+        Expired
+    }
+
+    /// <summary>
+    /// 云平台
+    /// </summary>
     public enum CloudPlatform
     {
         /// <summary>

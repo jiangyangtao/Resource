@@ -25,14 +25,8 @@ namespace Resource.Core.Services
             await _serverRepository.AddAsync(server);
         }
 
-        public async Task RemoveAsync(string instanceId)
-        {
-            await _serverRepository.DeleteIfExistAsync(a => a.InstanceId == instanceId);
-        }
+        public Task RemoveAsync(string instanceId) => _serverRepository.DeleteIfExistAsync(a => a.InstanceId == instanceId);
 
-        public async Task UpdateAsync(Server server)
-        {
-            await _serverRepository.UpdateIfExistAsync(a => a.InstanceId == server.InstanceId, a => a = server);
-        }
+        public Task UpdateAsync(Server server) => _serverRepository.UpdateIfExistAsync(a => a.InstanceId == server.InstanceId, a => a = server);
     }
 }
