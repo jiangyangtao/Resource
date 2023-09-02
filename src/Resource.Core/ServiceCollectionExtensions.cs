@@ -15,11 +15,14 @@ namespace Resource.Core
 
             services.AddScoped<IServerProvider, ServerProvider>();
             services.AddScoped<ISystemProvider, SystemProvider>();
+            services.AddScoped<IDeployeProvider, DeployeProvider>();
+            services.AddScoped<IEnvironmentProvider, EnvironmentProvider>();
             services.AddScoped<IApplicationProvider, ApplicationProvider>();
 
             services.AddScoped<IServerService, ServerService>();
             services.AddScoped<ISystemService, SystemService>();
             services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IEnvironmentService, EnvironmentService>();
 
             return services;
         }
