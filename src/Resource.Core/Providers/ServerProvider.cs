@@ -42,6 +42,22 @@ namespace Resource.Core.Providers
             return query.LongCountAsync();
         }
 
+        public async Task<ServerDeploye[]> GetServerDeploysAsync(string[] instanceIds)
+        {
+            if (instanceIds.IsNullOrEmpty()) return Array.Empty<ServerDeploye>();
+
+            var servers = await _serverRepository.Get(a => instanceIds.Contains(a.InstanceId)).Select(a => new ServerDeploye
+            {
+                InstanceId = a.InstanceId,
+                EnvironmentCode = a.EnvironmentCode,
+                PublicIPAddress = a.PublicIPAddress,
+                IntranetIPAddress = a.IntranetIPAddress,
+            }).ToArrayAsync();
+            if (servers.IsNullOrEmpty()) return Array.Empty<ServerDeploye>();
+
+            return servers;
+        }
+
         public Task<Server[]> GetServersAsync(ServerQueryParams queryParams)
         {
             var query = queryParams.GetQueryable(_serverRepository);

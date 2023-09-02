@@ -13,5 +13,7 @@ namespace Resource.Core.Abstracts.IProviders
         Task<long> GetServerCountAsync(ServerQueryParams queryParams);
 
         Task<Server?> GetServerAsync(string instanceId);
+
+        Task<ServerDeploye[]> GetServerDeploysAsync(string[] instanceIds);
     }
 }

@@ -1,6 +1,10 @@
-﻿namespace Resource.Application.Dto
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Resource.Application.Dto
 {
-    public class DeployeDto
+    public class DeployeDto : ServerDtoBase
     {
+        [Required]
+        public string ApplicationCode { set; get; }
     }
 }

@@ -14,5 +14,7 @@ namespace Resource.Core.Abstracts.IProviders
         Task<long> GetApplicationCountAsync(ApplicationQueryParams queryParams);
 
         Task<Application?> GetApplicationAsync(string applicationCode);
+
+        Task<Application[]> GetApplicationsAsync(string[] applicationCodes);
     }
 }

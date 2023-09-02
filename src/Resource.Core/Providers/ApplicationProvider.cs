@@ -35,5 +35,15 @@ namespace Resource.Core.Providers
 
             return r;
         }
+
+        public async Task<Application[]> GetApplicationsAsync(string[] applicationCodes)
+        {
+            if (applicationCodes.IsNullOrEmpty()) return Array.Empty<Application>();
+            var applications = await _applicationRepository.Get(a => applicationCodes.Contains(a.ApplicationCode)).ToArrayAsync();
+
+            if (applications.IsNullOrEmpty()) return Array.Empty<Application>();
+
+            return applications;
+        }
     }
 }

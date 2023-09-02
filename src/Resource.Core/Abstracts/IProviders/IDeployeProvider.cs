@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Resource.Model;
 
 namespace Resource.Core.Abstracts.IProviders
 {
@@ -11,5 +7,9 @@ namespace Resource.Core.Abstracts.IProviders
         Task DeployeAsync(string applicationCode, string serverInstanceId);
 
         Task UnDeployeAsync(string applicationCode, string serverInstanceId);
+
+        Task<ServerDeploye[]> GetServerDeployesAsync(string applicationCode);
+
+        Task<Application[]> GetApplicationDeployesAsync(string serverInstanceId);
     }
 }

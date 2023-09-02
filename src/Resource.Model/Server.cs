@@ -93,6 +93,29 @@ namespace Resource.Model
         public string Description { get; set; }
     }
 
+    public class ServerDeploye
+    {
+        /// <summary>
+        /// 实例标识
+        /// </summary>
+        public string InstanceId { set; get; }
+
+        /// <summary>
+        /// 环境代码
+        /// </summary>
+        public string EnvironmentCode { set; get; }
+
+        /// <summary>
+        /// 公网IP地址
+        /// </summary>
+        public string PublicIPAddress { set; get; }
+
+        /// <summary>
+        /// 内网IP地址
+        /// </summary>
+        public string IntranetIPAddress { set; get; }
+    }
+
     public class ServerQueryParams : PaginationBase
     {
         /// <summary>

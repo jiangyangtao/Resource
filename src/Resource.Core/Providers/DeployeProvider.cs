@@ -2,6 +2,7 @@
 using Resource.Core.Abstracts.IProviders;
 using Resource.Model;
 using Yangtao.Hosting.Core.HttpErrorResult;
+using Yangtao.Hosting.Extensions;
 using Yangtao.Hosting.Repository.Abstractions;
 
 namespace Resource.Core.Providers
@@ -34,6 +35,7 @@ namespace Resource.Core.Providers
             {
                 ApplicationCode = applicationCode,
                 ServerInstanceId = serverInstanceId,
+                DeployeTime = DateTime.Now,
             });
         }
 
@@ -43,6 +45,22 @@ namespace Resource.Core.Providers
             if (deploye == null) return;
 
             await _deployeRepository.DeleteAsync(deploye);
+        }
+
+
+        public async Task<Application[]> GetApplicationDeployesAsync(string serverInstanceId)
+        {
+            var applicationCodes = await _deployeRepository.Get(a => a.ServerInstanceId == serverInstanceId).Select(a => a.ApplicationCode).ToArrayAsync();
+            if (applicationCodes.IsNullOrEmpty()) return Array.Empty<Application>();
+
+            return await _applicationProvider.GetApplicationsAsync(applicationCodes);
+        }
+
+        public async Task<ServerDeploye[]> GetServerDeployesAsync(string applicationCode)
+        {
+            var serverInstanceIds = await _deployeRepository.Get(a => a.ApplicationCode == applicationCode).Select(a => a.ServerInstanceId).ToArrayAsync();
+
+            return await _serverProvider.GetServerDeploysAsync(serverInstanceIds);
         }
     }
 }

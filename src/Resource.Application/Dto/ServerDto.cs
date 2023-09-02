@@ -9,11 +9,23 @@ namespace Resource.Application.Dto
 {
     public class ServerDtoBase
     {
+        [Required]
         public string ServerInstanceId { set; get; }
     }
 
-    public class ServerDto : ServerDtoBase
+    public class ServerDeployeResult : ServerDtoBase
     {
+        public ServerDeployeResult() { }
+
+        public ServerDeployeResult(ServerDeploye serverDeploye)
+        {
+            ServerInstanceId = serverDeploye.InstanceId;
+            EnvironmentCode = serverDeploye.EnvironmentCode;
+            PublicIPAddress = serverDeploye.PublicIPAddress;
+            IntranetIPAddress = serverDeploye.IntranetIPAddress;
+        }
+
+
         /// <summary>
         /// 环境代码
         /// </summary>
@@ -23,13 +35,16 @@ namespace Resource.Application.Dto
         /// <summary>
         /// 公网IP地址
         /// </summary>
-        public string? PublicIPAddress { set; get; }
+        public string PublicIPAddress { set; get; }
 
         /// <summary>
         /// 内网IP地址
         /// </summary>
-        public string? IntranetIPAddress { set; get; }
+        public string IntranetIPAddress { set; get; }
+    }
 
+    public class ServerDto : ServerDeployeResult
+    {
         /// <summary>
         /// 服务器类型
         /// </summary>

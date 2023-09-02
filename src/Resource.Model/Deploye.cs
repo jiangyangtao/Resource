@@ -7,5 +7,7 @@ namespace Resource.Model
         public string ServerInstanceId { set; get; }
 
         public string ApplicationCode { set; get; }
+
+        public DateTime DeployeTime { set; get; }
     }
 }
