@@ -1,4 +1,6 @@
 ﻿
+using Resource.Model;
+
 namespace Resource.Core.Abstracts.IProviders
 {
     public interface ISystemProvider
@@ -7,8 +9,8 @@ namespace Resource.Core.Abstracts.IProviders
 
         Task<bool> ExistAsync(string systemCode);
 
-        Task<Model.System[]> GetSystemsAsync(string systemCode, string systemName, int start, int size);
+        Task<Model.System[]> GetSystemsAsync(SystemQueryParams queryParams);
 
-        Task<long> GetSystemCountAsync(string systemCode, string systemName);
+        Task<long> GetSystemCountAsync(SystemQueryParams queryParams);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Resource.Core.Abstracts.IProviders;
+using Resource.Model;
 using Yangtao.Hosting.Extensions;
 using Yangtao.Hosting.Repository.Abstractions;
 
@@ -28,28 +29,19 @@ namespace Resource.Core.Providers
             return await _systemRepository.Get(a => a.SystemCode == systemCode).FirstOrDefaultAsync();
         }
 
-        public Task<long> GetSystemCountAsync(string systemCode, string systemName)
+        public Task<long> GetSystemCountAsync(SystemQueryParams queryParams)
         {
-            var query = GetSystemQuery(systemCode, systemName);
+            var query = queryParams.GetSystemQueryable(_systemRepository);
             return query.LongCountAsync();
         }
 
-        public async Task<Model.System[]> GetSystemsAsync(string systemCode, string systemName, int start, int size)
+        public async Task<Model.System[]> GetSystemsAsync(SystemQueryParams queryParams)
         {
-            var query = GetSystemQuery(systemCode, systemName);
-            var result = await query.OrderByDescending(a => a.CreateTime).Skip(start).Take(size).ToArrayAsync();
+            var query = queryParams.GetSystemQueryable(_systemRepository);
+            var result = await query.OrderByDescending(a => a.CreateTime).Skip(queryParams.Start).Take(queryParams.Size).ToArrayAsync();
             if (result.IsNullOrEmpty()) return Array.Empty<Model.System>();
 
             return result;
-        }
-
-        private IQueryable<Model.System> GetSystemQuery(string systemCode, string systemName)
-        {
-            var query = _systemRepository.Get();
-            if (systemCode.NotNullAndEmpty()) query = query.Where(a => EF.Functions.Like(a.SystemCode, $"%{systemCode}%"));
-            if (systemName.NotNullAndEmpty()) query = query.Where(a => EF.Functions.Like(a.SystemName, $"%{systemName}%"));
-
-            return query;
         }
     }
 }
